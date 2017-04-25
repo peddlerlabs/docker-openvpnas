@@ -41,7 +41,7 @@ RUN \
 
 # create admin user and set default password for it
  useradd -s /sbin/nologin admin && \
- echo "admin:password" | chpasswd && \
+ echo "admin:${PASSWORD:-password}" | chpasswd && \
 
 # set some config for openvpn-as
  find /usr/local/openvpn_as/scripts -type f -print0 | \
